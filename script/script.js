@@ -13,4 +13,4 @@ equacao2Grau = (a,b,c) =>{
 }
 
 
-escrever(equacao2Grau(3,-2,-1))
+//escrever(equacao2Grau(3,-2,-1))
