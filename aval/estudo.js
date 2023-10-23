@@ -1,4 +1,4 @@
-let lista_nome = ["Calebe","Naiara"];
+let lista_nome = ["João","Vínicius"];
 function atualizar_lista(){
     let nomes = "";
     if(lista_nome.length > 0){
@@ -12,16 +12,13 @@ function atualizar_lista(){
 }
 
 function deleta(){
-    let indice = -1;
     let nome = document.getElementById("nome").value;
-    for(let i = 0; i<lista_nome.length; i++);
-     if(nome==lista_nome[i]);
-     {
-        indice = i;       
+    if(nome !=""){
+        for(let i = 0; i<lista_nome.length; i++);
+        if(nome == lista_nome(i)) lista_nome.splice(i,1);
     }
-if(i> -1){
-    lista_nome.splice(indice,1);
-}
+     atualizar_lista();
+
 }
 function insere_ultimo() {
     let nome = document.getElementById("nome").value;
@@ -61,6 +58,7 @@ function deleta_primeiro(){
        atualizar_lista();
     }
     function ordenar_z_a(){
+         lista_nome.sort();
         lista_nome.reverse();
         atualizar_lista();
     }
