@@ -1,8 +1,10 @@
 body {
     background-color: whitesmoke;
 }
-.variavel {
-    width: 32px;
-    background-color: antiquewhite;
-    text-align: right;
+
+.entrada{
+    width: 40px;
+    border: none;
+    background-color: darkgray;
+    border-bottom: 2px solid black;
 }
