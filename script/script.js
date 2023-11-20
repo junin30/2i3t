@@ -9,20 +9,11 @@ let valor = "";
 let executar = "";
 let temPonto = false;
 let desligada = false;
-let n = "";
-let an = "";
-let a1 = "";
-let r = "a2 - a1";
 soma = (a, b) => Number(a) + Number(b);
 sub = (a, b) => Number(a) - Number(b);
 mult = (a, b) => Number(a) * Number(b);
 div = (a, b) => Number(a) / Number(b);
 raiz = a => Math.sqrt(a);
-
-function PA (){
-    Sn = (a1 + an)*n/2
-}
-
 
 equacao2Grau = (a, b, c) => {
     let delta = sub(mult(b, b), mult(4, mult(a, c)));
@@ -30,10 +21,10 @@ equacao2Grau = (a, b, c) => {
     
     if (delta < 0) return "Não possui raiz real.";
     if (delta == 0) return "x<sub>1</sub> = x<sub>2</sub> = " + div(-b, mult(2, a));
-    return  "x<sub>1</sub> =  " + div(sub(-b, raiz(delta)), mult(2, a))+
-    " x<sub>2</sub> = " + + div(soma(-b, raiz(delta)), mult(2, a)) 
+    return  "x<sub>1</sub> = " + div(soma(-b, raiz(delta)), mult(2, a)) +
+    "  x<sub>2</sub> = " + div(sub(-b, raiz(delta)), mult(2, a));
 }
- 
+
 function mostrar_resultado() {
     document.getElementById("resultado").value = valor;
 }
@@ -123,13 +114,10 @@ function digitando(tecla) {
 
 const calcular_equacao = () => {
     if (a != "" && a != "0") {
-    a = Number(a);
-    b = Number(b);
-    c = Number(c);
-    if(sa != "+") a = -a;
-    if(sb != "+") b = -b;
-    if(sc != "+") c = -c;
-    document.getElementById("raiz").innerHTML = equacao2Grau(a,b,c);
+        if(a != "+") {a = -(Number(a))} else {a = Number(a)};
+        if(b != "+") {b = -(Number(b))} else {b = Number(b)};;
+        if(c != "+") {c = -(Number(c))} else {c = Number(c)};;
+        document.getElementById("raiz").innerHTML = equacao2Grau(a,b,c);
     }
 }
 
@@ -159,3 +147,34 @@ const set_valor_c = () => {
     calcular_equacao();
 }
 
+let pa_a1 = "";
+let pa_r = "";
+let pa_n = "";
+const setpa_a1 = () =>{
+    pa_a1 = Number(document.getElementById("pa_a1").value);
+    mostrarseq_pa();
+}
+const setpa_n = () =>{
+    pa_n = Number(document.getElementById("pa_n").value);
+    mostrarseq_pa();
+}
+const setpa_r = () =>{
+    pa_r = Number(document.getElementById("pa_r").value);
+    mostrarseq_pa();
+}
+const mostrarseq_pa = () =>{
+    let pa = pa_a1;
+    let ntermos = 1;
+    if(pa_r != "" && pa_n != "" && pa_a1 !="" ){
+        for(let i =1; i<pa_n; i++){
+            if(ntermos <4){
+                pa += "," + (Number(pa_a1) + (i*pa_r));
+                ntermos++;
+            }
+        }
+    }
+    if( pa_n > 3){
+        pa+= "" + (Number(pa_a1)+ pa_n);
+    }
+    document.getElementById("pa_seq").innerHTML = pa;
+}
