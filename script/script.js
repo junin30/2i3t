@@ -178,3 +178,14 @@ const mostrarseq_pa = () =>{
     }
     document.getElementById("pa_seq").innerHTML = pa;
 }
+let num = 0;
+const trocar_imagem = () => {
+    num++;
+    setTimeout(()=>{
+        document.getElementById("figura1").src = "img/img"+num+".jpg";  
+        if(num == 3) num = 0;
+        trocar_imagem();
+    },2000);
+  
+}
+trocar_imagem();

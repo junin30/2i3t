@@ -19,3 +19,12 @@
 .rodape{
     background-color: #b2dafa;
 }
+
+.imagens{
+    width: 100%;
+    text-align: center;
+}
+#figura1{
+    width: 640px;
+    height: 360px;
+}
